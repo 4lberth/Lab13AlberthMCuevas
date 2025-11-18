@@ -1,0 +1,17 @@
+E:\PROYECTOS\Labs\Lab13AlberthMCuevas\Lab13AlberthMCuevas.Infrastructure\bin\Debug\net9.0\Lab13AlberthMCuevas.Infrastructure.deps.json
+E:\PROYECTOS\Labs\Lab13AlberthMCuevas\Lab13AlberthMCuevas.Infrastructure\bin\Debug\net9.0\Lab13AlberthMCuevas.Infrastructure.runtimeconfig.json
+E:\PROYECTOS\Labs\Lab13AlberthMCuevas\Lab13AlberthMCuevas.Infrastructure\bin\Debug\net9.0\Lab13AlberthMCuevas.Infrastructure.dll
+E:\PROYECTOS\Labs\Lab13AlberthMCuevas\Lab13AlberthMCuevas.Infrastructure\bin\Debug\net9.0\Lab13AlberthMCuevas.Infrastructure.pdb
+E:\PROYECTOS\Labs\Lab13AlberthMCuevas\Lab13AlberthMCuevas.Infrastructure\obj\Debug\net9.0\Lab13AlberthMCuevas.Infrastructure.csproj.AssemblyReference.cache
+E:\PROYECTOS\Labs\Lab13AlberthMCuevas\Lab13AlberthMCuevas.Infrastructure\obj\Debug\net9.0\Lab13AlberthMCuevas.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+E:\PROYECTOS\Labs\Lab13AlberthMCuevas\Lab13AlberthMCuevas.Infrastructure\obj\Debug\net9.0\Lab13AlberthMCuevas.Infrastructure.AssemblyInfoInputs.cache
+E:\PROYECTOS\Labs\Lab13AlberthMCuevas\Lab13AlberthMCuevas.Infrastructure\obj\Debug\net9.0\Lab13AlberthMCuevas.Infrastructure.AssemblyInfo.cs
+E:\PROYECTOS\Labs\Lab13AlberthMCuevas\Lab13AlberthMCuevas.Infrastructure\obj\Debug\net9.0\Lab13AlberthMCuevas.Infrastructure.csproj.CoreCompileInputs.cache
+E:\PROYECTOS\Labs\Lab13AlberthMCuevas\Lab13AlberthMCuevas.Infrastructure\obj\Debug\net9.0\Lab13AlberthMCuevas.Infrastructure.dll
+E:\PROYECTOS\Labs\Lab13AlberthMCuevas\Lab13AlberthMCuevas.Infrastructure\obj\Debug\net9.0\refint\Lab13AlberthMCuevas.Infrastructure.dll
+E:\PROYECTOS\Labs\Lab13AlberthMCuevas\Lab13AlberthMCuevas.Infrastructure\obj\Debug\net9.0\Lab13AlberthMCuevas.Infrastructure.pdb
+E:\PROYECTOS\Labs\Lab13AlberthMCuevas\Lab13AlberthMCuevas.Infrastructure\obj\Debug\net9.0\Lab13AlberthMCuevas.Infrastructure.genruntimeconfig.cache
+E:\PROYECTOS\Labs\Lab13AlberthMCuevas\Lab13AlberthMCuevas.Infrastructure\obj\Debug\net9.0\ref\Lab13AlberthMCuevas.Infrastructure.dll
+E:\PROYECTOS\Labs\Lab13AlberthMCuevas\Lab13AlberthMCuevas.Infrastructure\bin\Debug\net9.0\Lab13AlberthMCuevas.Domain.dll
+E:\PROYECTOS\Labs\Lab13AlberthMCuevas\Lab13AlberthMCuevas.Infrastructure\bin\Debug\net9.0\Lab13AlberthMCuevas.Domain.pdb
+E:\PROYECTOS\Labs\Lab13AlberthMCuevas\Lab13AlberthMCuevas.Infrastructure\obj\Debug\net9.0\Lab13Alb.9A5CEB85.Up2Date

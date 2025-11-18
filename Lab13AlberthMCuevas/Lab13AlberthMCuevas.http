@@ -1,0 +1,6 @@
+@Lab13AlberthMCuevas_HostAddress = http://localhost:5250
+
+GET {{Lab13AlberthMCuevas_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

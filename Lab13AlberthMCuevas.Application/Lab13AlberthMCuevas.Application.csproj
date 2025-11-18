@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net9.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="MediatR" Version="13.1.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Lab13AlberthMCuevas.Domain\Lab13AlberthMCuevas.Domain.csproj" />
+      <ProjectReference Include="..\Lab13AlberthMCuevas.Infrastructure\Lab13AlberthMCuevas.Infrastructure.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="UseCase\Reportes\" />
+    </ItemGroup>
+
+</Project>
