@@ -7,7 +7,6 @@ using Lab13AlberthMCuevas.Infrastructure.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
-using Microsoft.OpenApi;
 using Microsoft.OpenApi.Models;
 using IConfiguration = Microsoft.Extensions.Configuration.IConfiguration;
 
@@ -17,12 +16,12 @@ public static class ServiceRegistrationExtensions
 {
     public static IServiceCollection AddApiServices(this IServiceCollection services, IConfiguration configuration)
     {
+        // Obtener cadena de conexión según el ambiente
+        var connectionString = GetConnectionString(configuration);
+
         // Configurar DbContext con MySQL
         services.AddDbContext<LinqContext>(options =>
-            options.UseMySql(
-                configuration.GetConnectionString("DefaultConnection") ?? "Server=localhost;Port=3306;Database=linqexample;User=root;Password=",
-                ServerVersion.AutoDetect(configuration.GetConnectionString("DefaultConnection") ?? "Server=localhost;Port=3306;Database=linqexample;User=root;Password=")
-            ));
+            options.UseNpgsql(connectionString));
 
         // Registrar UnitOfWork y Repositorios
         services.AddScoped<IUnitOfWork, UnitOfWork>();
@@ -85,7 +84,7 @@ public static class ServiceRegistrationExtensions
                     ValidIssuer = configuration["Jwt:Issuer"],
                     ValidAudience = configuration["Jwt:Audience"],
                     IssuerSigningKey = new SymmetricSecurityKey(
-                        Encoding.UTF8.GetBytes(configuration["Jwt:SecretKey"])
+                        Encoding.UTF8.GetBytes(configuration["Jwt:SecretKey"] ?? "default-secret-key-for-development")
                     )
                 };
             });
@@ -97,9 +96,26 @@ public static class ServiceRegistrationExtensions
             options.AddPolicy("Freelancer", p => p.RequireRole("Freelancer"));
         });
 
-
-
         return services;
     }
-    
+
+    // Método para obtener la cadena de conexión según el ambiente
+    private static string GetConnectionString(IConfiguration configuration)
+    {
+        var environment = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
+        
+        // En producción, usar variable de entorno DATABASE_URL
+        if (environment == "Production")
+        {
+            var databaseUrl = Environment.GetEnvironmentVariable("DATABASE_URL");
+            if (!string.IsNullOrEmpty(databaseUrl))
+            {
+                return databaseUrl;
+            }
+        }
+
+        // En desarrollo, usar la cadena del appsettings.json o valor por defecto
+        return configuration.GetConnectionString("DefaultConnection") ?? 
+               "Host=localhost;Port=5432;Database=linqexample;Username=postgres;Password=";
+    }
 }

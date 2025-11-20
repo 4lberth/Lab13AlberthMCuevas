@@ -52,8 +52,6 @@ E:\PROYECTOS\Labs\Lab13AlberthMCuevas\Lab13AlberthMCuevas\bin\Debug\net9.0\Micro
 E:\PROYECTOS\Labs\Lab13AlberthMCuevas\Lab13AlberthMCuevas\bin\Debug\net9.0\Microsoft.Extensions.Logging.Abstractions.dll
 E:\PROYECTOS\Labs\Lab13AlberthMCuevas\Lab13AlberthMCuevas\bin\Debug\net9.0\Microsoft.Extensions.Options.dll
 E:\PROYECTOS\Labs\Lab13AlberthMCuevas\Lab13AlberthMCuevas\bin\Debug\net9.0\Microsoft.Extensions.Primitives.dll
-E:\PROYECTOS\Labs\Lab13AlberthMCuevas\Lab13AlberthMCuevas\bin\Debug\net9.0\MySqlConnector.dll
-E:\PROYECTOS\Labs\Lab13AlberthMCuevas\Lab13AlberthMCuevas\bin\Debug\net9.0\Pomelo.EntityFrameworkCore.MySql.dll
 E:\PROYECTOS\Labs\Lab13AlberthMCuevas\Lab13AlberthMCuevas\bin\Debug\net9.0\Lab13AlberthMCuevas.Application.dll
 E:\PROYECTOS\Labs\Lab13AlberthMCuevas\Lab13AlberthMCuevas\bin\Debug\net9.0\Lab13AlberthMCuevas.Infrastructure.dll
 E:\PROYECTOS\Labs\Lab13AlberthMCuevas\Lab13AlberthMCuevas\bin\Debug\net9.0\Lab13AlberthMCuevas.Application.pdb
@@ -155,3 +153,6 @@ E:\PROYECTOS\Labs\Lab13AlberthMCuevas\Lab13AlberthMCuevas\bin\Debug\net9.0\Lab13
 E:\PROYECTOS\Labs\Lab13AlberthMCuevas\Lab13AlberthMCuevas\bin\Debug\net9.0\Lab13AlberthMCuevas.Domain.pdb
 E:\PROYECTOS\Labs\Lab13AlberthMCuevas\Lab13AlberthMCuevas\bin\Debug\net9.0\MediatR.dll
 E:\PROYECTOS\Labs\Lab13AlberthMCuevas\Lab13AlberthMCuevas\bin\Debug\net9.0\MediatR.Contracts.dll
+E:\PROYECTOS\Labs\Lab13AlberthMCuevas\Lab13AlberthMCuevas\obj\Debug\net9.0\Lab13AlberthMCuevas.sourcelink.json
+E:\PROYECTOS\Labs\Lab13AlberthMCuevas\Lab13AlberthMCuevas\bin\Debug\net9.0\Npgsql.dll
+E:\PROYECTOS\Labs\Lab13AlberthMCuevas\Lab13AlberthMCuevas\bin\Debug\net9.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll

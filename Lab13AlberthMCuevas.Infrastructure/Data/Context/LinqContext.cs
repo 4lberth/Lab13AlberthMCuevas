@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using Lab13AlberthMCuevas.Infrastructure;
 using Microsoft.EntityFrameworkCore;
-using Pomelo.EntityFrameworkCore.MySql.Scaffolding.Internal;
 
 namespace Lab13AlberthMCuevas.Infrastructure.Data.Context;
 
@@ -25,15 +24,13 @@ public partial class LinqContext : DbContext
 
     public virtual DbSet<Product> Products { get; set; }
 
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseMySql("server=localhost;port=3306;database=linqexample;user=root", Microsoft.EntityFrameworkCore.ServerVersion.Parse("10.4.32-mariadb"));
+    // Eliminar OnConfiguring - la configuración viene del Program.cs
+    // protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder
-            .UseCollation("utf8mb4_general_ci")
-            .HasCharSet("utf8mb4");
+        // PostgreSQL no necesita UseCollation ni HasCharSet
+        // Solo configurar las entidades
 
         modelBuilder.Entity<Client>(entity =>
         {
@@ -41,7 +38,7 @@ public partial class LinqContext : DbContext
 
             entity.ToTable("clients");
 
-            entity.Property(e => e.ClientId).HasColumnType("int(11)");
+            entity.Property(e => e.ClientId).HasColumnType("integer");
             entity.Property(e => e.Email).HasMaxLength(100);
             entity.Property(e => e.Name).HasMaxLength(100);
         });
@@ -54,9 +51,9 @@ public partial class LinqContext : DbContext
 
             entity.HasIndex(e => e.ClientId, "ClientId");
 
-            entity.Property(e => e.OrderId).HasColumnType("int(11)");
-            entity.Property(e => e.ClientId).HasColumnType("int(11)");
-            entity.Property(e => e.OrderDate).HasColumnType("datetime");
+            entity.Property(e => e.OrderId).HasColumnType("integer");
+            entity.Property(e => e.ClientId).HasColumnType("integer");
+            entity.Property(e => e.OrderDate).HasColumnType("timestamp");
 
             entity.HasOne(d => d.Client).WithMany(p => p.Orders)
                 .HasForeignKey(d => d.ClientId)
@@ -74,10 +71,10 @@ public partial class LinqContext : DbContext
 
             entity.HasIndex(e => e.ProductId, "ProductId");
 
-            entity.Property(e => e.OrderDetailId).HasColumnType("int(11)");
-            entity.Property(e => e.OrderId).HasColumnType("int(11)");
-            entity.Property(e => e.ProductId).HasColumnType("int(11)");
-            entity.Property(e => e.Quantity).HasColumnType("int(11)");
+            entity.Property(e => e.OrderDetailId).HasColumnType("integer");
+            entity.Property(e => e.OrderId).HasColumnType("integer");
+            entity.Property(e => e.ProductId).HasColumnType("integer");
+            entity.Property(e => e.Quantity).HasColumnType("integer");
 
             entity.HasOne(d => d.Order).WithMany(p => p.Orderdetails)
                 .HasForeignKey(d => d.OrderId)
@@ -96,7 +93,7 @@ public partial class LinqContext : DbContext
 
             entity.ToTable("products");
 
-            entity.Property(e => e.ProductId).HasColumnType("int(11)");
+            entity.Property(e => e.ProductId).HasColumnType("integer");
             entity.Property(e => e.Description).HasMaxLength(100);
             entity.Property(e => e.Name).HasMaxLength(100);
             entity.Property(e => e.Price).HasPrecision(10, 2);

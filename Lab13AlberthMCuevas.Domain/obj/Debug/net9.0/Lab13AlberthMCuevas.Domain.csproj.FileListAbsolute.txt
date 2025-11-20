@@ -10,3 +10,4 @@ E:\PROYECTOS\Labs\Lab13AlberthMCuevas\Lab13AlberthMCuevas.Domain\obj\Debug\net9.
 E:\PROYECTOS\Labs\Lab13AlberthMCuevas\Lab13AlberthMCuevas.Domain\obj\Debug\net9.0\refint\Lab13AlberthMCuevas.Domain.dll
 E:\PROYECTOS\Labs\Lab13AlberthMCuevas\Lab13AlberthMCuevas.Domain\obj\Debug\net9.0\Lab13AlberthMCuevas.Domain.pdb
 E:\PROYECTOS\Labs\Lab13AlberthMCuevas\Lab13AlberthMCuevas.Domain\obj\Debug\net9.0\ref\Lab13AlberthMCuevas.Domain.dll
+E:\PROYECTOS\Labs\Lab13AlberthMCuevas\Lab13AlberthMCuevas.Domain\obj\Debug\net9.0\Lab13AlberthMCuevas.Domain.sourcelink.json
