@@ -1,0 +1,34 @@
+name: Build and Deploy .NET Application
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Check out code
+      uses: actions/checkout@v4
+    
+    - name: Set up .NET
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: '9.0'
+    
+    - name: Restore dependencies
+      run: dotnet restore
+    
+    - name: Build application
+      run: dotnet build --configuration Release
+    
+    - name: Publish application
+      run: dotnet publish --configuration Release --output ./published
+    
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: published-app
+        path: ./published
