@@ -34,7 +34,7 @@ public partial class LinqContext : DbContext
 
         modelBuilder.Entity<Client>(entity =>
         {
-            entity.HasKey(e => e.ClientId).HasName("PRIMARY");
+            entity.HasKey(e => e.ClientId);
 
             entity.ToTable("clients");
 
@@ -45,7 +45,7 @@ public partial class LinqContext : DbContext
 
         modelBuilder.Entity<Order>(entity =>
         {
-            entity.HasKey(e => e.OrderId).HasName("PRIMARY");
+            entity.HasKey(e => e.OrderId);
 
             entity.ToTable("orders");
 
@@ -63,7 +63,7 @@ public partial class LinqContext : DbContext
 
         modelBuilder.Entity<Orderdetail>(entity =>
         {
-            entity.HasKey(e => e.OrderDetailId).HasName("PRIMARY");
+            entity.HasKey(e => e.OrderDetailId);
 
             entity.ToTable("orderdetails");
 
@@ -89,7 +89,7 @@ public partial class LinqContext : DbContext
 
         modelBuilder.Entity<Product>(entity =>
         {
-            entity.HasKey(e => e.ProductId).HasName("PRIMARY");
+            entity.HasKey(e => e.ProductId);
 
             entity.ToTable("products");
 

@@ -103,19 +103,32 @@ public static class ServiceRegistrationExtensions
     private static string GetConnectionString(IConfiguration configuration)
     {
         var environment = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
-        
+    
         // En producción, usar variable de entorno DATABASE_URL
         if (environment == "Production")
         {
             var databaseUrl = Environment.GetEnvironmentVariable("DATABASE_URL");
             if (!string.IsNullOrEmpty(databaseUrl))
             {
-                return databaseUrl;
+                return ConvertPostgresToConnectionString(databaseUrl);
             }
         }
 
-        // En desarrollo, usar la cadena del appsettings.json o valor por defecto
+        // En desarrollo, usar PostgreSQL de Render
         return configuration.GetConnectionString("DefaultConnection") ?? 
-               "Host=localhost;Port=5432;Database=linqexample;Username=postgres;Password=";
+               "Host=dpg-d4flpd49c44c73bse660-a.oregon-postgres.render.com;Port=5432;Database=linqexample_6hi7;Username=lab14_user;Password=LeQJd4efqGvbC3CV1JsECXstfN9zYVAr;SSL Mode=Require";
+    }
+
+// Convertir URL postgresql:// a cadena de conexión estándar
+    private static string ConvertPostgresToConnectionString(string postgresUrl)
+    {
+        var uri = new Uri(postgresUrl);
+        var username = uri.UserInfo.Split(':')[0];
+        var password = uri.UserInfo.Split(':')[1];
+        var host = uri.Host;
+        var port = uri.Port > 0 ? uri.Port : 5432;
+        var database = uri.AbsolutePath.TrimStart('/');
+
+        return $"Host={host};Port={port};Database={database};Username={username};Password={password};SSL Mode=Require";
     }
 }
